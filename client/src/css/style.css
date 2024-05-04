@@ -1,0 +1,1559 @@
+/* --------------Tipografa utilizada------------- */
+@font-face{
+    font-family: Cirka;
+    src: url(../../assets/fonts/Cirka-Variable.ttf)
+  }
+  @font-face{
+    font-family: cirkaL;
+    src: url(../../assets/fonts/Cirka-Light.otf)
+  }
+  @font-face{
+    font-family: cirkaBold;
+    src: url(../../assets/fonts/Cirka-Bold.otf)
+  }
+  @font-face{
+    font-family: GT;
+    src: url(../../assets/fonts/GT-Flexa-Mono-Medium.ttf)
+  }
+
+  /* --------reset------------- */
+
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    vertical-align: baseline;
+  }
+  
+  /* Evitamos problemas con las imagenes */
+  img, picture, video, iframe, figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    /* opcional */
+    -o-object-fit: cover;
+       object-fit: cover;
+    /* opcional */
+    -o-object-position: center center;
+       object-position: center center;
+  }
+  
+  /* Reseteamos los enlaces para funcionar como cajas... */
+  a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+  }
+  
+  /* ... excepto los que se encuentran en párrafos */
+  p a {
+    display: inline;
+  }
+  
+  /* Quitamos los puntos de los <li> */
+  li {
+    list-style-type: none;
+  }
+  
+  /* Configuramos anclas suaves */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Desactivamos estilos por defecto de las principales etiquetas de texto */
+  h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Evitamos problemas con los pseudoelementos de quotes */
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+    content: none;
+  }
+  
+  /* Configuramos el texto que seleccionamos */
+  ::-moz-selection {
+    background-color: var(--negro);
+    color: var(--blanco);
+  }
+  ::selection {
+    background-color: var(--negro);
+    color: var(--blanco);
+  }
+  
+  /* Nivelamos problemas de tipografías y colocación de formularios */
+  form, input, textarea, select, button, label {
+    font-family: inherit;
+    font-size: inherit;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+    background-color: transparent;
+    color: inherit;
+    display: block;
+   
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
+  
+  /* Reseteamos las tablas */
+  table, tr, td {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  /* Evitamos problemas con los SVG */
+  svg {
+   
+    display: block;
+    fill: currentColor;
+  }
+  
+  :root {
+    /* color principal */
+   --color:rgb(255,255,255);
+   
+    /* TipografÃ­a */
+    --tipo-principal:GT;
+    --tipo-secundaria: Cirka;
+    --tipo-tercera: cirkaBold;
+   
+    
+  } 
+ 
+
+/* ---------body con la imagende fondo en modo fixed */
+body{
+    margin: 0;
+    margin: 0; 
+    height: 100vh;  
+   width: 100%;
+    hyphens: auto;
+    box-sizing: border-box;
+    background-image:url(../../assets/img/ia4.jpg) ;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-bottom: 10%;
+    
+}
+/* ----------header-------------- */
+.header{
+  margin: 0 auto;
+  width:100%;
+  padding: 1em 3em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+    background-color: rgba(255, 255, 255, 0.119);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(209, 213, 219, 0.3);
+   
+    color: var(--color);
+    padding: 0 3rem;
+    font-family: var(--tipo-principal);
+    
+   /* contiene a todos los elementos del header  y tiene posicion fixed */
+  }
+  .header__container{
+    margin: 0 auto;
+    max-width: 120rem;
+    padding: 1em 3em;
+    min-width: 20rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+   /* contenedor con un flex row space-between */
+  }
+  .header__menu{
+    display: flex;
+    flex-flow:row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3em;
+    
+  }
+  .header__lista{
+    
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 1.5em;
+    flex-flow:row nowrap;
+    /* lista desordenada donde se encuentran los enlaces de navegacion */
+  }
+   
+  
+  .header__navegacion{
+   box-sizing: border-box;
+  
+  }
+  .header__h1{
+    font-size: 1.5em;
+    font-family:var(--tipo-principal);
+   }
+  .header__elementoLista{
+   list-style-type: none;
+   /* elementos de la lista de navegacion */
+  }
+  .header__linkLista{
+
+    font-family:var(--tipo-tercera);
+    font-size: 1.3em;
+    text-decoration: none;
+    color: var(--color);
+    flex-flow: nowrap;
+    /* enlaces de navegacion */
+  }
+  .header__linkLista:hover{
+
+    font-family: var(--tipo-principal);
+    /* enlaces al hacer hover cambian de tipografia */
+  }
+  .header__panel{
+    display: flex;
+    align-items: center;
+    gap: 1.5;
+   /* panel donde se encuentra elsaludo la foto del avatar y el boton de cerrar sesion */
+  }
+  .header__saludo{
+    margin:01.5rem;
+    font-size: 1.5em;
+  }
+  .header__boton{
+    width:30px;
+   height: 30px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 01.5rem;
+ 
+    background-color: transparent;
+    border:none;
+   color:var(--color);
+   
+    font-size: 2.7em;
+    font-weight: bold;
+    /* boton de cerrar sesion y sus estilos */
+  }
+  .header__perfil{
+    width: 40px;
+    height: 80px;
+    
+  }
+  .perfil__icono{
+    font-size: 2.5em;
+  }
+  /* --------menu desplegable o hamburguesa */
+  .cabecera__boton{
+    display: none;
+    /* boton del menu hamburguesa */
+  }
+  .menu__icon{
+    font-size: 2.5em;
+    color: var(--color);
+    /* icono del menu hamburguesa */
+  }
+ /* imagen de perfil */
+  .header__img{
+    width: 5rem;
+  }
+  /* -----------inicio---------- */
+.main{
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20%;
+    padding-left: 20%;
+    padding-bottom: 20%;
+  /* div principal de la pg de inicio contiene un h2 y un parrafo  */
+    
+
+}
+.h2__main{
+    color: var(--color);
+    font-family: var(--tipo-principal);
+    font-size: 3em;
+}
+.main__parrafo{
+    width: 25rem;
+    color: var(--color);
+    font-size: 2em;
+}
+/* ---------login--------- */
+.login{
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ height:90vh;
+ box-sizing: border-box;
+
+  border-radius: 12px;
+ /* div que contiene el foemulario propiedades para centrar en la pantalla */
+}
+.formulario__login{
+  display: flex ;
+  flex-direction: column;
+  width: 30em;  
+  
+  justify-content: center;
+  color:var(--color);
+  background-color:transparent;
+  padding: 2%;
+  background-color: rgba(255, 255, 255, 0.119);
+  border-radius: 40px;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(209, 213, 219, 0.3);
+  /* propiedades del formulario  colores padding etc*/
+}
+.login__h2{
+  font-family:var(--tipo-principal);
+  font-size: 2em;
+  margin-bottom: 5%;
+  /* titulo del formulario */
+}
+.input-box{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  
+  margin-bottom: 10%;
+  /* contiene  los inputs y los icono del login por eso tiene posicion relativa para colocar los iconos */
+}
+.formulario__input{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255,.4);
+  border-radius: 40px;
+  caret-color: darkcyan;
+  color:var(--color);
+  font-size: 1em;
+  padding-left:5%;
+ /* estilos generales de los inputs que van a utilizar todos los inputs de la web */
+}
+
+.formulario__input::placeholder{
+  color: var(--color);
+  font-size: 1em;
+  /* estilos placeholder */
+}
+.icono{
+  position:absolute;
+  right: 10px;
+  top: 20%;
+  transform: translate(-50%);
+  font-size: 28px;
+  /* iconos en posicion absoluta para poder colocarlos con respecto al input_box */
+}
+.formulario__boton{
+  width: 100%;
+  height: 50px;
+  background-color: var(--color);
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0,0, .1);
+  cursor: pointer;
+  font-size: 1em;
+  color: darkcyan;
+  font-weight: 600;
+  padding: 12px;
+  margin-top: 10px;
+  font-family: var(--tipo-principal);
+  /* boton de formulario tambien compartido en todos los formularios de la web */
+}
+.login__p{
+  margin-top: 1.25rem;
+  text-align: center;
+  font-family: var(--tipo-principal);
+  /* texto que avisa de usuario incorrecto */
+ }
+/* -------productos--------- */
+.contenedor{
+   max-width: 100%;
+
+    padding: 10% 5% ;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+   gap: 1.25rem;
+    flex-wrap: wrap;
+   
+  padding-bottom: 10%;
+ /* div contenedor   */
+}
+.contenedor__div{
+   width: auto;
+   
+    display: flex;
+   
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3.125rem;
+    background-color: rgba(255, 255, 255, 0.119);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(209, 213, 219, 0.3);
+    border-radius: 5%;
+    /* div que contiene a todas las imagenes */
+   
+}
+
+.contenedor__foto{
+  position: relative;
+  overflow: hidden;
+  width: 30rem;
+  cursor: pointer;
+  /* div que cntien las imagenes y sus dimensiones */
+}
+.foto__img{
+width: 100%;
+height: 100%;
+transition:all 0.5s ease-in-out;
+  object-fit: cover;
+  /* imagenes tamaño 100% para no distorsionarse */
+}
+.titulo__foto{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(17, 41, 23, 0.319);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 1.5px solid rgba(209, 213, 219, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+  /* titulo con posicion absoluta para centrarlo encima de la imagen con top 0 */
+  } 
+  .contenedor__h2{
+    
+      font-family:var(--tipo-principal);
+      color: var(--color);
+      font-size: 2em;
+      /* estilos del titulo
+      */
+  }
+.contenedor__foto:hover >.foto__img{
+  transform: scale(1.2);
+  /* al hacer hover en el contenedor la foto aumenta de tamaño al tansformar la escala */
+}
+.contenedor__foto:hover >.titulo__foto{
+ opacity: 1;
+ visibility: visible;
+ align-items: center;
+ /* al hacer hover en el contenedor de la imagen el titulo cambia la opacidad y se hace visible */
+}
+.contenedor__foto:hover >.contenedor__h2{
+  margin: 50%;
+ }
+
+
+
+/* --------detalleproductos--------- */
+/* .tarjeta{
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.119);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(209, 213, 219, 0.3);
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 30%;
+    padding: 5%;
+
+}
+.tarjeta__h2{
+    color: var(--color);
+    font-family: var(--tipo-principal);
+    font-size: 2em;
+}
+.tarjeta__parrafo{
+    color: var(--color);
+    font-size: 1.7em;
+} */
+/* --------añadirProducto-----
+ .forma{
+    width: auto;
+    margin: 3% 30%;
+    padding: 5%;
+ }
+ .forma__formulario{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    background-color: rgba(255, 255, 255, 0.119);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(209, 213, 219, 0.3);
+    border-radius: 5%;
+ }
+ .forma__label{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+ }
+ .forma__input{
+    width: 25rem;
+    height: 1.5625rem;
+    background-color: transparent;
+    border:1px solid white;
+ }
+ .forma__textarea{
+    width: 25rem;
+    height: 6rem;
+    background-color: transparent;
+    border:1px solid white;
+ }
+ .forma__boton{
+    width:auto;
+    height: 4rem;
+    margin-left: 35%;
+    border: none;
+    border-radius: 5%;
+    color:lightseagreen;
+    font-size: 1.5em;
+ } */
+ /* --------------consulta--------------- */
+ .consultas{
+  width: 90%;
+  height: 70vh;
+  margin: 15% 5%;
+  /* contenedor consultas para centrar los elemntos */
+ }
+ .consultas__h2{
+  color: var(--color);
+  text-align: center;
+  font-family: var(--tipo-principal);
+  font-size: 2.7em;
+  /* estilos del encabezado */
+ }
+ .consultas__div{
+  margin-top: 5%;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  gap: 6.25rem;
+ 
+/* contenedor de los cudros de consultas */
+ }
+ .consultas__cuadro{
+  
+  display: flex;
+  flex-direction: column;
+ }
+ .cuadro__div{
+  width: 31.25rem;
+  display: flex;
+  padding: 5%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.119);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(209, 213, 219, 0.3);
+   /* cuadros que contiene los titulos y sus botones con sus estilos */
+ }
+ .cuadros__botones{
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border: 1px solid var(--color);
+  padding: 10px;
+  /* contenedor de los iconos de cada consulta */
+ }
+ .consultas__icon{
+  color: var(--color);
+  font-size: 1.7em;
+   /* estilos de los iconos ,tamaño y color */
+  
+ }
+ .cuadros__h2{
+  color: var(--color);
+  font-family: var(--tipo-principal);
+  font-size: 1.5em;
+  /* estilos de titulos de cada consulta */
+ }
+ .textarea{
+ max-width:25em ;
+  height:auto ;
+  border: 2px solid rgba(209, 213, 219, 0.9);
+  border-radius: 10px;
+  resize: none;
+  padding: 2%;
+  font-size: 1em;
+  padding-left: 20px;
+   /* estilo de los texareas en todos los formularios */
+ }
+ .textarea::placeholder{
+  color: var(--color);
+  font-size: 1em;
+ 
+ 
+ }
+ .plus{
+  font-size: 9em;
+  color: var(--color);
+  /* simbolo mas para añadir consulta */
+ }
+ /* -----------nuevaConsulta------------ */
+ .nuevaConsulta{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+.formulario__consulta{
+  display: flex ;
+  flex-direction: column;
+  width: 30em;  
+  height: auto;
+ 
+  justify-content: center;
+  
+  color: var(--color);
+  background-color:transparent;
+  padding: 2%;
+  background-color: rgba(255, 255, 255, 0.119);
+  border-radius: 40px;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(209, 213, 219, 0.3);
+  /* estilos del formulario */
+}
+.nuevaConsulta__h2{
+  font-family: var(--tipo-principal);
+  font-size: 2em;
+  margin-bottom: 5%;
+  /* estilos del encabezado */
+}
+ .input{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255,.4);
+  border-radius: 40px;
+  caret-color: darkcyan;
+  color:var(--color);
+  font-size: 1em;
+  padding-left:5%;
+ }
+ .input::placeholder{
+  color: var(--color);
+  font-size: 1em;
+  
+}
+ /* estilos de los inputs y sus placeholder */
+
+.boton{
+  width: 100%;
+  height: 50px;
+  background-color: var(--color);
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0,0, .1);
+  cursor: pointer;
+  font-size: 1em;
+  color: darkcyan;
+  font-weight: 600;
+  padding: 12px;
+  margin-top: 10px;
+  font-family: var(--tipo-principal);
+  /* estilos del boton del formulario */
+}
+/* ---------------------editarConsultas------------- */
+
+.editar__div{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+}
+.formulario__editar{
+  display: flex ;
+  flex-direction: column;
+  width: 30em;  
+ 
+  justify-content: center;
+  color: var(--color);
+  background-color:transparent;
+  padding: 2%;
+  background-color: rgba(255, 255, 255, 0.119);
+  border-radius: 40px;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(209, 213, 219, 0.3);
+  /* estilo del formulario */
+}
+.editar__h2{
+  margin-bottom: 5%;
+  font-size: 2.5em;
+  font-family: var(--tipo-principal);
+ /* estilo del encabezado */
+}
+/* ---------------------borrarConsultas------------ */
+.borrar{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  /* div que contiene toda la informacion  */
+}
+.borrar__div{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  /* div centrado con sus estilos */
+}
+.borrar__h2{
+  color: var(--color);
+  font-size: 1.7em;
+  font-family: var(--tipo-principal);
+  /* enunciado de la pg borrar */
+}
+.borrar__botones{
+  display: flex;
+  width: 300px;
+  gap: 50px;
+ /* estilo de los botones */
+}
+ /* -----------------perfiles--------------- */
+
+ .perfiles{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  padding: 25% 0 5%;
+  /* estilos de toda la seccion */
+ }
+ .perfiles__h2{
+  color: var(--color);
+  font-family: var(--tipo-principal);
+  font-size: 2.5em;
+  /* estilos de encabezado */
+ }
+ .perfiles__div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 5% 0;
+   /* contiene todas las tarjetas de perfiles con un display flex para centrarlas y un wrap para el resposive */
+ }
+ .plantilla__h2{
+  font-size: 1.5em;
+ }
+ /* .plus{
+  font-size: 9em;
+  color: white;
+ } */
+ .plantilla{
+  width: 16rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 2%;
+  background-color:rgba(255, 255, 255, 0.119);
+  border-radius: 40px;
+  border: 2px solid rgba(225, 225, 225,.3);
+  backdrop-filter: blur(20px);
+  color: var(--color);
+  font-family: var(--tipo-principal);
+  /* cada una de las tarjetas que contienen las imagenes de los perfiles y sus botones con su centrado */
+ }
+ .plantilla__div{
+  display: flex;
+  justify-content: center;
+  border: 2px solid var(--color);
+  padding: 5%;
+  /* contenedor del icono centrado */
+ }
+ .perfil__icon{
+  color: var(--color);
+  font-size: 2em;
+  /* estilos del  icono de editar perfil
+ } */
+}
+ .perfil__boton{
+  background-color: var(--color);
+  padding: 5%;
+  color: rgb(11, 128, 128);
+  font-size: 1.5em;
+  /* estilos del boton de perfil */
+ }
+/* ----------------------editar  perfil------------------ */
+.perfil__div{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formulario__perfil{
+  display: flex ;
+  flex-direction: column;
+  width: 30em;  
+ 
+  justify-content: center;
+  color: var(--color);
+  background-color:transparent;
+  padding: 2%;
+  background-color: rgba(255, 255, 255, 0.119);
+  border-radius: 40px;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(209, 213, 219, 0.3);
+  /* estilos formulario */
+}
+.formulario__h2{
+  margin-bottom: 5%;
+  font-size: 2.5em;
+  font-family: var(--tipo-principal);
+  /* estilos titulo del formulario */
+}
+ /* -----borrarPerfil------- */
+ .borrar__div{
+  margin: 30% 10%;
+ }
+ .carrito{
+  margin: 30%;
+ }
+ .pp{
+  width: 200px;
+  color: var(--color);
+  margin: 50%;
+ }
+ /* ----------nosotros---------------- */
+ .nosotros{
+  width: 100%;
+  height: auto;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+   /* estilos de seccion nosotros */
+ }
+ .nosotros__h2{
+  font-family: var(--tipo-principal);
+  font-size: 2.7em;
+  color: var(--color);
+  text-align: center;
+  /* estilos de titulo */
+ }
+ .nosotros__texto{
+  margin-top: 5%;
+  color: var(--color);
+  font-family: var(--tipo-secundaria);
+  font-size: 1.7em;
+  padding: 5%;
+  background-color: rgba(255, 255, 255, 0.119);
+  border-radius: 40px;
+  border: 2px solid rgba(225, 225, 225,.3);
+  backdrop-filter: blur(20px);
+  /* estilos del texto y del cuadro que lo contiene */
+ }
+ /* ------------galeria------------- */
+ .container{
+  width: 100%;
+  max-width:80%;
+  margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 3.75rem;
+  padding: 5% 20px ;
+  display: grid;
+  grid-template-columns:3fr 3fr 3fr;
+  grid-template-rows: 30rem;
+  grid-gap: 1.25rem;
+  /* contenedor con display grid que facilita el responsive con tres columnas */
+}
+.container__figure{
+ width: 100%;
+ height: 100%; 
+ /* contenedor de las imagenes */
+}
+.container__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* imagenes  */
+}
+.container__box:nth-child(1){
+  grid-row-start:span 2 ;
+}
+.container__box:nth-child(4){
+  grid-row-start:span 2 ;
+}
+ /* posicion de las imagenes en cada fila */
+
+ /* ----------footer------------ */
+
+ .footer{
+  margin: 0 auto;
+  width:100%;
+  height: 10%;
+  padding: 1em 3em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    background-color: rgba(255, 255, 255, 0.119);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(209, 213, 219, 0.3);
+   
+    color: var(--color);
+    padding: 0 3rem;
+    font-family: var(--tipo-principal);
+    /* el footer esta formado por una sola div que centra sus elementos y les da estilos */
+ }
+ @media screen and (max-width:1900px){
+  .contenedor__foto{
+   
+    width: 21.875rem;
+   
+  }
+  /* -----------nueva consulta------------- */
+  .nuevaConsulta{
+    height: auto;
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
+  .formulario__consulta{
+    width: 25em;
+   }
+   .textarea{
+    width: 21em;
+    height: auto;
+   }
+   /* --------------editar consulta------------- */
+   .formulario__editar{
+    width:25em ;
+   }
+
+ }
+ @media screen and (max-width:1024px){
+  .Cabecera{
+    display: none;
+   }
+   .header{
+    padding: 1em 1em;
+   }
+   /* .header__container{
+    padding: 1em 1em;
+   } */
+   .cabecera__boton{
+    display: block;
+   }
+   .header__navegacion{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+   }
+   .header__h1{
+    font-size: 1.7em;
+   }
+   .header__menu{
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+   }
+   .header__lista{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 0;
+    overflow: hidden;
+    transition: all .5s ease;
+   }
+   .header__lista.isActive{
+    opacity: 1;
+    height: 30vh;
+   }
+   .header__elementoLista{
+    font-size: 1.5em;
+   }
+  
+   .header__panel{
+    display: none;
+    width: 100%;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+   }
+   .header__panel.activa{
+    display: flex;
+   }
+   /* ------------inicio----------- */
+   .main{
+    width: 100%;
+    padding:10% 7%;
+    height: 100vh;
+    box-sizing: border-box;
+    
+   
+   }
+   .h2__main{
+    font-size: 3em;
+    
+   }
+   .main__parrafo{
+    width: 20rem;
+    color: var(--color);
+    font-size: 2em;
+   }
+   /* ------servicios------------- */
+   .contenedor{
+    padding-bottom: 20%;
+    padding-top: 35%;
+  }
+  /* -----------nosotros--------- */
+  .nosotros{
+    padding-top: 25%;
+    padding-bottom: 15%;
+  }
+  .nosotros__h2{
+    font-size: 2.5em;
+  }
+  .nosotros__texto{
+    font-size: 1.5em;
+  }
+  .container{
+      width: 97%;
+      padding: 0;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: .625rem;
+      grid-template-rows: 350px;
+  }
+  /* ---------consultas------------- */
+  .consultas{
+    width: 90%;
+    height: 70vh;
+    margin: 35% 5%;
+   }
+   .consultas__h2{
+   
+    font-size: 2.5em;
+   }
+   .consultas__div{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+   
+  
+   }
+   .consultas__cuadro{
+    
+    display: flex;
+    flex-direction: column;
+   }
+   .cuadro__div{
+    width: 30rem;
+    display: flex;
+    padding: 5%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.119);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(209, 213, 219, 0.3);
+    
+   }
+   .contenedor__h2{
+    font-size: 1.5em;
+   }
+   .cuadros__botones{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    border: 1px solid var(--color);
+    padding: 10px;
+   }
+   .consultas__icon{
+    color: var(--color);
+    font-size: 2em;
+    
+    
+   }
+   /* -----------nueva consulta---------------- */
+   .formulario__consulta{
+    width: 25em;
+   }
+   .textarea{
+    width: 23em;
+    height: auto;
+   }
+   /* --------------editar consulta------------- */
+   .formulario__editar{
+    width:25em ;
+   }
+    /* -----------------borrar consultas-------------- */
+    .borrar{
+      padding-top: 25%;
+     }
+     .borrar__h2{
+      font-size: 1.5em;
+     }
+
+ }
+
+ @media screen and (max-width:800px){
+  .body{
+    height: 100vh;
+    background-image:url(../../assets/img/ai4movil.jpg) ;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  .Cabecera{
+    display: none;
+   }
+   .header{
+    padding: 1em 1em;
+   }
+   /* .header__container{
+    padding: 1em 1em;
+   } */
+   .cabecera__boton{
+    display: block;
+   }
+   .header__navegacion{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+   }
+   .header__h1{
+    font-size: 1.5em;
+   }
+   .header__menu{
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+   }
+   .header__lista{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 0;
+    overflow: hidden;
+    transition: all .5s ease;
+   }
+   .header__lista.isActive{
+    opacity: 1;
+    height: 30vh;
+   }
+  
+   .header__panel{
+    display: none;
+    width: 100%;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+   }
+   .header__panel.activa{
+  display: flex;
+   }
+   /* ------------------inicio-------------- */
+   .main{
+    width: 100%;
+    padding:10% 7%;
+    height: 100vh;
+    box-sizing: border-box;
+    
+   
+   }
+   .h2__main{
+    font-size: 2.7em;
+    
+   }
+   .main__parrafo{
+    width: 20rem;
+    color: var(--color);
+    font-size: 1.7em;
+    font-family: var(--tipo-secundaria);
+    
+    
+  }
+  /* ---------login----------- */
+  .formulario__login{
+    width: 18em;
+    padding: 5%;
+   }
+  /* ---------------servicios------------ */
+  .contenedor{
+    padding-bottom: 20%;
+    padding-top: 35%;
+  }
+
+   /* ---------------nosotros------------ */
+   .nosotros{
+    padding-top: 25%;
+    padding-bottom: 15%;
+  }
+  .nosotros__h2{
+    font-size: 2.5em;
+  }
+  .nosotros__texto{
+    font-size: 1.5em;
+  }
+  .container{
+      width: 95%;
+      padding: 0;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: .625rem;
+      grid-template-rows: 350px;
+  }
+  .container__box:nth-child(1){
+      grid-column-start: span 1;
+  }
+  /* -------------------consultas-------------- */
+  .consultas{
+    width: 90%;
+    height: 70vh;
+    margin: 35% 5%;
+   }
+   .consultas__h2{
+   
+    font-size: 2.5em;
+   }
+   .consultas__div{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+   
+  
+   }
+   .consultas__cuadro{
+    
+    display: flex;
+    flex-direction: column;
+   }
+   .cuadro__div{
+    width: 25rem;
+    display: flex;
+    padding: 5%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.119);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(209, 213, 219, 0.3);
+    
+   }
+   .contenedor__h2{
+    font-size: 1.5em;
+   }
+   .cuadros__botones{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    border: 1px solid var(--color);
+    padding: 10px;
+   }
+   .consultas__icon{
+    color: var(--color);
+    font-size: 2em;
+    
+    
+   }
+   /* ------------nueva consulta---------- */
+   .formulario__consulta{
+    width: 25em;
+    padding: 5%;
+   }
+   .textarea{
+    width: 23em;
+    height: auto;
+   }
+   /* -------------------editar consulta------------ */
+   .formulario__editar{
+    width:25em ;
+    padding: 5%;
+   }
+   /* -----------------borrar consultas-------------- */
+   .borrar{
+    padding-top: 25%;
+   }
+   .borrar__h2{
+    font-size: 1.5em;
+   }
+}
+@media screen and (max-width:500px) {
+.body{
+  height: 100vh;
+  background-image:url(../../assets/img/ai4movil.jpg) ;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+ .Cabecera{
+  display: none;
+ }
+ .header{
+  padding: 1em 1em;
+ }
+ /* .header__container{
+  padding: 1em 1em;
+ } */
+ .header__saludo{
+  font-size: 1em;
+  margin: 0;
+ }
+ .cabecera__boton{
+  display: block;
+ }
+ .header__navegacion{
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+ }
+ .header__h1{
+  font-size: 1.3em;
+ }
+ .header__menu{
+  width: 100%;
+  justify-content: space-between;
+  gap: 0;
+ }
+ .header__lista{
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 0;
+  overflow: hidden;
+  transition: all .5s ease;
+ }
+ .header__elementoLista{
+  font-size: 1.2em;
+ }
+ .header__lista.isActive{
+  opacity: 1;
+  height: 30vh;
+ }
+
+ .header__panel{
+  width: 100%;
+  padding: 0;
+  display: none;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+ }
+ .header__panel.activa{
+display: flex;
+ }
+ /* -----------login------------- */
+ .formulario__login{
+  width: 18em;
+  padding: 5%;
+ }
+ 
+ /* ------------inicio----------- */
+ .main{
+  width: 100%;
+  padding:10% 7%;
+  height: 100vh;
+  box-sizing: border-box;
+ 
+ }
+ .h2__main{
+  font-size: 2em;
+  
+ }
+ .main__parrafo{
+  width: 15rem;
+  color: var(--color);
+  font-size: 1.3em;
+  font-family: var(--tipo-secundaria);
+  
+}
+/* -----------productos---------- */
+.contenedor{
+  padding-bottom: 20%;
+  padding-top: 35%;
+}
+.contenedor__foto{
+  width: 18rem;
+}
+/* ----------nosotros--------- */
+.nosotros{
+  padding-top: 25%;
+  padding-bottom: 10%;
+}
+.nosotros__h2{
+  font-size: 2em;
+}
+.nosotros__texto{
+  font-size: 1em;
+}
+.container{
+  width: 90%;
+  padding: 0;
+  grid-template-columns: 1fr;
+}
+.container__box{
+  height:350px ;
+}
+/* ----------consultas--------- */
+.consultas{
+  width: 90%;
+  height: 70vh;
+  margin: 35% 5%;
+ }
+ .consultas__h2{
+ 
+  font-size: 2em;
+ }
+ .consultas__div{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+ 
+
+ }
+ .consultas__cuadro{
+  
+  display: flex;
+  flex-direction: column;
+ }
+ .cuadro__div{
+  width: 18rem;
+  display: flex;
+  padding: 5%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.119);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(209, 213, 219, 0.3);
+  
+ }
+ .contenedor__h2{
+  font-size: 1.3em;
+ }
+ .cuadros__botones{
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border: 1px solid var(--color);
+  padding: 10px;
+ }
+ .consultas__icon{
+  color: var(--color);
+  font-size: 1.7em;
+  
+  
+ }
+ /* ---------añadir consulta---------- */
+ .nuevaConsulta{
+  height: auto;
+  padding-top: 35%;
+  padding-bottom: 30%;
+ }
+ .formulario__consulta{
+  width: 19em;
+  padding: 5%;
+ }
+ .textarea{
+  width: 16em;
+  padding-left: 1.25rem;
+ }
+ /* -----------editar consultas-------- */
+ .formulario__editar{
+  width:19em ;
+  padding: 5%;
+ }
+ /* --------borrar consultas--------- */
+ .borrar{
+  padding-top: 30%;
+ }
+ .borrar__h2{
+  font-size: 1.5em;
+ }
+ /* ---------perfiles-------------- */
+ .perfiles{
+  padding-top: 35%;
+  padding-bottom: 25%;
+ }
+ .perfiles__h2{
+  font-size: 1.5em;
+ }
+ .plantilla{
+  width:auto;
+  padding: 5%;
+ }
+ .perfil__foto{
+  width:10em;
+ }
+ .perfil__img{
+  width: 100%;
+  height: 100%;
+ }
+  
+}
+ 
+ 
+
+
+
